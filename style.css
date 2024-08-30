@@ -16,7 +16,8 @@ body {
 }
 
 .wrapper {
-    width: 780px;
+    width: 90%;
+    max-width: 780px;
     border-radius: 20px;
     padding: 35px 40px;
     background: #133;
@@ -27,6 +28,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 header h2 {
@@ -36,6 +38,7 @@ header h2 {
 header .coluna {
     display: flex;
     align-items: center;
+    margin-top: 10px;
 }
 
 header .coluna span {
@@ -80,6 +83,8 @@ header .coluna span {
 .teclas-piano {
     display: flex;
     margin-top: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .teclas-piano .tecla {
@@ -88,38 +93,49 @@ header .coluna span {
     text-transform: uppercase;
     cursor: pointer;
     position: relative;
-    user-select:none ;
+    user-select: none;
 }
 
 .teclas-piano .preta {
-    width: 44px;
+    width: 8%;
+    max-width: 44px;
     height: 140px;
     z-index: 2;
-    margin: 0 -22px 0 -22px;
+    margin: 0 -4% 0 -4%;
     border-radius: 0 0 5px 5px;
     background: linear-gradient(#333, #000);
 }
-.teclas-piano .preta:active{
+.teclas-piano .preta.active{
     box-shadow: inset -5px 5px 10px rgba(255,255,255,0.1);
     background: linear-gradient(to bottom, #000 0%, #434343);
 }
 
 .teclas-piano .branca {
-    width: 70px;
+    width: 12%;
+    max-width: 70px;
     height: 230px;
     border-radius: 8px;
     border: 1px solid #000;
     background: linear-gradient(#fff 96%, #eee 4%);
 }
-.teclas-piano .branca:active{
+.teclas-piano .branca.active{
     box-shadow: inset -5px 5px 20px rgba(0,0,0,0.2);
     background: linear-gradient(to bottom, #fff 0%, #eee 100%);
 }
 
-.teclas-piano span{
+.teclas-piano span {
     position: absolute;
-    bottom:20px ;
+    bottom: 20px;
     width: 100%;
     text-align: center;
     font-size: 1.13rem;
+}
+
+@media (max-width: 600px) {
+    .teclas-piano .preta {
+        width: 10%;
+    }
+    .teclas-piano .branca {
+        width: 14%;
+    }
 }
